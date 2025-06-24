@@ -1,6 +1,6 @@
 # Web: Web Basics: Surprise
 
-##Step 1: Identify allowed HTTP methods
+## Step 1: Identify allowed HTTP methods
 
 We tested several common HTTP methods using curl:
 
