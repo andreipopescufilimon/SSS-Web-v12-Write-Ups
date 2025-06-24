@@ -7,7 +7,7 @@ This means if I don’t set the User-Agent to King-Kong, the server will refuse 
 flag.
 **Exploit** :
 
-```
+```bash
 curl -A "King-Kong" http://141.85.224.70:8086/king-kong/
 ```
 
