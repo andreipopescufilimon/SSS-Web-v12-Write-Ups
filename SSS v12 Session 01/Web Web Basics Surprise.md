@@ -4,7 +4,7 @@
 
 We tested several common HTTP methods using curl:
 
-```
+```bash
 curl -X GET http://141.85.224.70:8093/surprise          # 405 Method Not Allowed
 curl -X POST http://141.85.224.70:8093/surprise         # 405 Method Not Allowed
 curl -X DELETE http://141.85.224.70:8093/surprise       # 405 Method Not Allowed
@@ -19,7 +19,7 @@ curl -X PUT http://141.85.224.70:8093/surprise          # Response: "I don't und
 ## Step 2: Send form data
 We attempted sending a form field:
 
-```
+```bash
 curl -X PUT -d "surprise=flag" http://141.85.224.70:8093/surprise
 ```
 
@@ -32,7 +32,7 @@ This implies that the server wants data in JSON format, not application/x-www-fo
 ## Step 3: Send JSON data
 We then tried sending a JSON body:
 
-```
+```bash
 curl -X PUT -H "Content-Type: application/json" -d '{"surprise": "flag"}' http://141.85.224.70:8093/surprise
 ```
 
@@ -45,7 +45,7 @@ This indicates the expected key is now "name" instead of "surprise".
 Step 4: Provide expected name
 We tried sending a name key with the value "King-Kong" — a reference to another challenge in the same CTF:
 
-```
+```bash
 curl -X PUT -H "Content-Type: application/json" -d '{"name": "King-Kong"}' http://141.85.224.70:8093/surprise
 ```
 
