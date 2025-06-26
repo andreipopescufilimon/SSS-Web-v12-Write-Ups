@@ -6,7 +6,6 @@ If we change the invoice page index we then observe we get more invoicees but so
 
 So then we have to test all the invoices to check in which page we get the "SSS", which is at the page 10946. 
 
-//CODE
 
 ```py
 import requests
