@@ -44,3 +44,6 @@ for invoice_id in range(start, end + 1):
             f.write(response.text)
 
         break
+```
+The found flag: SSS{1ts_n0t_nic3_t0_sn00p_ar0und}
+
