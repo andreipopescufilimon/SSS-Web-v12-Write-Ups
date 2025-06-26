@@ -1,4 +1,4 @@
-Get the flag from mind-your-own-business.
+# Web Cookies and Session Management Mind Your Own Business
 
 We enter on the subscription page, then we fill in the credintials.
 We observe after that after the creditential completion is good, the page redirect us to a invoice page.
