@@ -1,4 +1,4 @@
-# Web: Santa
+# Web: Web Cookies and Session Management Santa
 
 ## Initial Page Inspection
 
