@@ -15,3 +15,7 @@ for i in {1..100}; do
     fi
 done
 ```
+
+
+
+And then we find at the certificate number 52, that is: SSS{Snowbelt}
