@@ -1,0 +1,2 @@
+\# Web SQL Injection Blacklist
+
