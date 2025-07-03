@@ -1,4 +1,4 @@
-# Web SQL Injection One by One
+![image](https://github.com/user-attachments/assets/985f6e5b-3b91-4d88-abd2-7abd5a1a2024)![image](https://github.com/user-attachments/assets/3c5984df-d224-4c0a-9425-0f27a1fc3337)# Web SQL Injection One by One
 
 We accessed the challenge and saw a checkout form with a "Promo Code" input field and this structure:
 
@@ -72,7 +72,6 @@ done
 flag="SSS$insideFlag"
 echo "----------------------------"
 echo "🎯 Final Flag: $flag"
-
 ```
 
 After a lot of waiting... in the middle of the night :). The script revealed the flag character by character, and eventually returned:
@@ -89,3 +88,5 @@ After a lot of waiting... in the middle of the night :). The script revealed the
 ----------------------------
 🎯 Final Flag: SSS{d1d_y0u_really_g0t_th1s_0ne_by_0ne_H7N19xjW}
 ```
+
+
