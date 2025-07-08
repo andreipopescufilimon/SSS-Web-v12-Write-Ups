@@ -4,6 +4,4 @@
 
 #Description: 
 First of all we try to access <script>alert(1)<script>, and then we search for the cookies after we figure out the site has a alert.
-Then at the cookies we observe the cookie flag: "SSS{miami_hot_number}". 
-
-<img src="Screenshot 2025-07-08 at 17.35.22.png" alt="Text alternativ" width="200" align="center">
+Then at the cookies we observe the cookie flag: "SSS{miami_hot_number}".
