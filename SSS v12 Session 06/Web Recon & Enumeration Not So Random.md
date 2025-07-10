@@ -39,7 +39,7 @@ if (isset($_GET['random_numberrr']) && intval($_GET['random_numberrr']) === $ran
 
 This means that server verifies if we send a **GET** parameter named random_numberrr then compares that with a secret value $random_number and then if they are equal we are shown the flag.
 
-But : **GET http://ctf-06.security.cs.pub.ro:8000/source.bak?random_numberrr=12345** ***Source.bak*** este is a statice file, the server doesn't understand that PHP code, it shows as text, it doesn't run it so we need to modify it to have a script for: **http://ctf-06.security.cs.pub.ro:8000/index.php?random_numberrr=12345**.
+But : **GET http://ctf-06.security.cs.pub.ro:8000/source.bak?random_numberrr=12345** ***Source.bak*** is a statice file, the server doesn't understand that PHP code, it shows as text, it doesn't run it so we need to modify it to have a script for: **http://ctf-06.security.cs.pub.ro:8000/index.php?random_numberrr=12345**.
 
 ```py
 import requests
