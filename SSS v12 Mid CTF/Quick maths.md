@@ -1,2 +1,1 @@
-\# Web Recon \& Enumeration Lamer Login
-
+# Quick maths
