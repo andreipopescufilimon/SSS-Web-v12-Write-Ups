@@ -1,2 +1,1 @@
-\# Web Recon \& Enumeration Lamer Login
-
+# Web Framework & API Vulnerabilities Snoop Doggy Dog
