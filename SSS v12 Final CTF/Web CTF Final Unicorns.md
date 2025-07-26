@@ -1,8 +1,7 @@
 # Web CTF Final Unicorns
 
 ```php
-if (!array_key_exists('val1', $_POST)
- || !array_key_exists('val2', $_POST)) {
+if (!array_key_exists('val1', $_POST) || !array_key_exists('val2', $_POST)) {
     echo "Please send the inputs correctly\n";
     exit(0);
 }
